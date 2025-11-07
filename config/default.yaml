@@ -1,0 +1,29 @@
+symbol: XAUUSD
+timeframe: M1
+data_collection:
+  sleep_seconds: 60
+feature_engineering:
+  ema_fast_period: 10
+  ema_slow_period: 30
+  rsi_period: 14
+  macd_fast: 12
+  macd_slow: 26
+  macd_signal: 9
+  williams_period: 14
+  atr_period: 14
+  target_horizon_minutes: 5
+model:
+  xgboost_params:
+    max_depth: 4
+    n_estimators: 200
+    learning_rate: 0.1
+    subsample: 0.7
+    colsample_bytree: 0.8
+execution:
+  risk_per_trade: 0.01
+  pip_value: 10
+  stop_loss_pips: 200
+  take_profit_pips: 400
+  deviation: 20
+  min_lot: 0.01
+  magic_number: 424242
